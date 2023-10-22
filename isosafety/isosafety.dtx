@@ -1,0 +1,135 @@
+% \iffalse meta-comment
+%
+% Copyright (C) 2023 by BenSt099
+% -------------------------------------------------------
+% 
+% This file may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in:
+%
+%    http://www.latex-project.org/lppl.txt
+%
+% and version 1.3 or later is part of all distributions of LaTeX 
+% version 2005/12/01 or later.
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{isosafety.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}[2005/12/01]
+%<package>\ProvidesPackage{isosafety}
+%<*package>
+    [2023/10/22 v1.0 ISO Safety Colors And Safety Signs]
+
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+%</package>
+%
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{isosafety}[2023/10/22]
+\usepackage{hyperref}
+\EnableCrossrefs         
+\CodelineIndex
+\RecordChanges
+\begin{document}
+    \DocInput{isosafety.dtx}
+    \PrintChanges
+    \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+%
+% \changes{v1.0}{2023/10/22}{Initial version}
+%
+% \GetFileInfo{isosafety.sty}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+% 
+%
+% \title{The \textsf{isosafety} package\thanks{This document
+%   corresponds to \textsf{isosafety}~\fileversion, dated \filedate.}}
+% \author{BenSt099 \\ \texttt{github.com/BenSt099}}
+%
+% \maketitle
+%
+% \section{Introduction}
+%
+% This package provides ISO colors and ISO signs according to the ISO standards 3864 and 7010.
+% It can be useful when creating instructions for chemical or physical experiments.
+%
+% \section{Usage}
+%
+% \subsection{ISO colors}
+%
+% There are 6 colors that are also used in the signs: \vspace*{5mm}
+%
+% \begin{tabular}{cc}
+%    Warning & {\color{Warning} Warning Color} \\
+%    Prohibition & {\color{Prohibition} Prohibition Color} \\
+%    Mandatory & {\color{Mandatory} Mandatory Color} \\
+%    Rescue & {\color{Rescue} Rescue Color} \\
+%    Backgrounds & {\color{Backgrounds} Backgrounds Color} \\
+%    Symbol & {\color{Symbol} Symbol Color} \\
+% \end{tabular}
+%
+% \subsection{Colors - Example}
+%
+% \begin{verbatim}
+%    {\color{Mandatory} Text with mandatory color}
+% \end{verbatim}
+%
+% \subsection{ISO signs}
+%
+% The signs from ISO are placed in a category, have a letter and a number
+%
+% \begin{itemize}
+%    \item Safe condition - Letter E (001 - 070)
+%    \item Crescent variant - CV (003, 004, 009, 010, 011, 012, 013, 027, 028, 029, 064, 067)
+%    \item Fire Protection - Letter F (001 - 019)
+%    \item Mandatory - Letter M (001 - 060)
+%    \item Prohibition - Letter P (001 - 074)
+%    \item Warning - Letter W (001 - 080)
+% \end{itemize}
+%
+% The command to access these signs has the following syntax:
+%
+% \begin{verbatim}
+%    \Isosign{ISO-{Letter}{Number}.png}
+% \end{verbatim}
+%
+% \subsection{Signs - Example}
+%
+% Imagine you want to put the sign of a fire extinguisher in your document.
+% Use the following command:
+% 
+% \begin{verbatim}
+%    \Isosign{ISO-F001.png}
+% \end{verbatim}
+%
+% \noindent For an overview, take a look at \href{https://en.wikipedia.org/wiki/ISO_7010}{Wikipedia}
+%
+% \StopEventually{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{Warning}{HTML}{F9A800}  
+\definecolor{Prohibition}{HTML}{9B2423}  
+\definecolor{Mandatory}{HTML}{005387}  
+\definecolor{Rescue}{HTML}{237F52}  
+\definecolor{Backgrounds}{HTML}{ECECE7}  
+\definecolor{Symbol}{HTML}{2B2B2C}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Isosign}[1]{images/ISO-#1.png}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \Finale
+\endinput
