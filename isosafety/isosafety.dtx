@@ -62,6 +62,11 @@
 % This package provides ISO colors and ISO signs according to the ISO standards 3864 and 7010.
 % It can be useful when creating instructions for chemical or physical experiments.
 %
+% \section{Dependencies}
+%
+% The package has the following dependencies: \texttt{graphicx}, \texttt{xcolor}.
+%
+%
 % \section{Usage}
 %
 % \subsection{ISO colors}
@@ -99,7 +104,7 @@
 % The command to access these signs has the following syntax:
 %
 % \begin{verbatim}
-%    \Isosign{ISO\_7010\_{Letter}{Number}.pdf}
+%    \Isosign{{Letter}{Number}}
 % \end{verbatim}
 %
 % \subsection{Signs - Example}
@@ -108,8 +113,11 @@
 % Use the following command:
 % 
 % \begin{verbatim}
-%    \Isosign{ISO\_7010\_F001.pdf}
+%     \includegraphics{\Isosign{F001}}
 % \end{verbatim}
+% 
+% \includegraphics{\Isosign{F001}}
+% \vspace*{5mm}
 %
 % \noindent For an overview, take a look at \href{https://en.wikipedia.org/wiki/ISO_7010}{Wikipedia}
 %
