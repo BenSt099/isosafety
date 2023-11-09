@@ -22,7 +22,7 @@
 %<package>\NeedsTeXFormat{LaTeX2e}[2005/12/01]
 %<package>\ProvidesPackage{isosafety}
 %<*package>
-    [2023/10/22 v1.0 ISO Safety Colors And Safety Signs]
+    [2023/11/09 v1.1 ISO Safety Colors And Safety Signs]
 
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
@@ -30,7 +30,7 @@
 %
 %<*driver>
 \documentclass{ltxdoc}
-\usepackage{isosafety}[2023/10/22]
+\usepackage{isosafety}[2023/11/09]
 \usepackage{hyperref}
 \EnableCrossrefs         
 \CodelineIndex
@@ -44,7 +44,7 @@
 % \fi
 %
 %
-% \changes{v1.0}{2023/10/22}{Initial version}
+% \changes{v1.1}{2023/11/09}{Beta version}
 %
 % \GetFileInfo{isosafety.sty}
 %
@@ -99,7 +99,7 @@
 % The command to access these signs has the following syntax:
 %
 % \begin{verbatim}
-%    \Isosign{ISO-{Letter}{Number}.png}
+%    \Isosign{ISO\_7010\_{Letter}{Number}.pdf}
 % \end{verbatim}
 %
 % \subsection{Signs - Example}
@@ -108,7 +108,7 @@
 % Use the following command:
 % 
 % \begin{verbatim}
-%    \Isosign{ISO-F001.png}
+%    \Isosign{ISO\_7010\_F001.pdf}
 % \end{verbatim}
 %
 % \noindent For an overview, take a look at \href{https://en.wikipedia.org/wiki/ISO_7010}{Wikipedia}
@@ -127,7 +127,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\Isosign}[1]{images/ISO-#1.png}
+\newcommand{\Isosign}[1]{isosafety-pdfs/ISO_7010_#1.pdf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
