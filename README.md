@@ -1,10 +1,9 @@
 # isosafety
 
-[isosafety package on CTAN](https://www.ctan.org/pkg/isosafety)
-
-## Status
-
-<span style="color:red">Maintained: **Yes**</span>
+[![Static Badge](https://img.shields.io/badge/Version-v1.1-blue)](https://github.com/BenSt099/isosafety/releases/tag/v1.1)
+[![Static Badge](https://img.shields.io/badge/Package-CTAN-blue)](https://www.ctan.org/pkg/isosafety)
+![Static Badge](https://img.shields.io/badge/Size-%3C2%20MB-red)
+![Static Badge](https://img.shields.io/badge/Maintained-Yes-success)
 
 ## Issues
 
