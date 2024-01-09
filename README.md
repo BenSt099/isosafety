@@ -7,7 +7,7 @@
 
 ## Issues
 
-For creating an issue, please provide a detailed description [here](https://github.com/BenSt099/isosafety/issues).
+For creating an issue, please provide a detailed description [here](https://github.com/BenSt099/isosafety/issues/new?assignees=&labels=&projects=&template=general-issues.md&title=).
 
 ## License
 
