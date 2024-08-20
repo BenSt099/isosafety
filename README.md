@@ -7,7 +7,7 @@
 
 ## Documentation
 
-The documentation can be viewed [here](https://github.com/BenSt099/isosafety/).
+The documentation can be viewed [here](https://github.com/BenSt099/isosafety/blob/main/isosafety/doc/isosafety-docs.pdf).
 
 ## Known Issues
 
