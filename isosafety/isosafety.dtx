@@ -22,16 +22,27 @@
 %<package>\NeedsTeXFormat{LaTeX2e}[2005/12/01]
 %<package>\ProvidesPackage{isosafety}
 %<*package>
-    [2023/11/09 v1.1 ISO Safety Colors And Safety Signs]
+    [2024/08/20 v1.2 ISO Safety Colors And Safety Signs]
 
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
+\RequirePackage{ifthen}
+\RequirePackage{xkeyval}
+
+\newcommand{\fullpath}{}
+\DeclareOption{fullpath}{\def\isosafetypath{#1}}
+\ProcessOptions\relax
 %</package>
 %
 %<*driver>
 \documentclass{ltxdoc}
-\usepackage{isosafety}[2023/11/09]
 \usepackage{hyperref}
+\definecolor{Warning}{HTML}{F9A800}  
+\definecolor{Prohibition}{HTML}{9B2423}  
+\definecolor{Mandatory}{HTML}{005387}  
+\definecolor{Rescue}{HTML}{237F52}  
+\definecolor{Backgrounds}{HTML}{ECECE7}  
+\definecolor{Symbol}{HTML}{2B2B2C} 
 \EnableCrossrefs         
 \CodelineIndex
 \RecordChanges
@@ -44,7 +55,7 @@
 % \fi
 %
 %
-% \changes{v1.1}{2023/11/09}{Beta version}
+% \changes{v1.2}{2024/08/20}{Beta version}
 %
 % \GetFileInfo{isosafety.sty}
 %
@@ -53,7 +64,7 @@
 %
 % \title{The \textsf{isosafety} package\thanks{This document
 %   corresponds to \textsf{isosafety}~\fileversion, dated \filedate.}}
-% \author{BenSt099 \\ \texttt{github.com/BenSt099}}
+% \author{BenSt099 \\ \texttt{github.com/BenSt099/isosafety}}
 %
 % \maketitle
 %
@@ -64,7 +75,7 @@
 %
 % \section{Dependencies}
 %
-% The package has the following dependencies: \texttt{graphicx}, \texttt{xcolor}.
+% The package has the following dependencies: \texttt{graphicx}, \texttt{xcolor}, \texttt{ifthen}, \texttt{xkeyval}.
 %
 %
 % \section{Usage}
@@ -74,12 +85,12 @@
 % There are 6 colors that are also used in the signs: \vspace*{5mm}
 %
 % \begin{tabular}{cc}
-%    Warning & {\color{Warning} Warning Color} \\
-%    Prohibition & {\color{Prohibition} Prohibition Color} \\
-%    Mandatory & {\color{Mandatory} Mandatory Color} \\
-%    Rescue & {\color{Rescue} Rescue Color} \\
-%    Backgrounds & {\color{Backgrounds} Backgrounds Color} \\
-%    Symbol & {\color{Symbol} Symbol Color} \\
+%    Warning & \textbf{{\color{Warning} Warning Color}} \\
+%    Prohibition & \textbf{{\color{Prohibition} Prohibition Color}} \\
+%    Mandatory & \textbf{{\color{Mandatory} Mandatory Color}} \\
+%    Rescue & \textbf{{\color{Rescue} Rescue Color}} \\
+%    Backgrounds & \textbf{{\color{Backgrounds} Backgrounds Color}} \\
+%    Symbol & \textbf{{\color{Symbol} Symbol Color}} \\
 % \end{tabular}
 %
 % \subsection{Colors - Example}
@@ -113,13 +124,17 @@
 % Use the following command:
 % 
 % \begin{verbatim}
+%     \usepackage{graphicx}
+%
 %     \includegraphics{\Isosign{F001}}
+%
+%     \includegraphics[scale=1.2]{\Isosign{F001}} 
 % \end{verbatim}
 % 
-% \includegraphics{\Isosign{F001}}
+% 
 % \vspace*{5mm}
 %
-% \noindent For an overview, take a look at \href{https://en.wikipedia.org/wiki/ISO_7010}{Wikipedia}
+% \noindent For a complete overview of all signs, take a look at \href{https://en.wikipedia.org/wiki/ISO_7010}{Wikipedia}
 %
 % \StopEventually{}
 
@@ -134,8 +149,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\isosafetypath}{false}
+\DeclareOptionX{fullpath}{\renewcommand{\isosafetypath}{#1}}
+\ProcessOptionsX\relax
+
+\ifthenelse{\equal{\isosafetypath}{false}}
+{\PackageError{isosafety}{Missing key-value option 'fullpath' in usepackage-statement, please see documentation}{Please provide the full path to this package, usually /texlive/2024/texmf-dist/tex/latex/isosafety}}
+{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\Isosign}[1]{isosafety-pdfs/ISO_7010_#1.pdf}
+\newcommand{\Isosign}[1]{\fullpath /isosafety-pdfs/ISO_7010_#1.pdf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

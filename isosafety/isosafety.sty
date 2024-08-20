@@ -1,0 +1,58 @@
+%%
+%% This is file `isosafety.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% isosafety.dtx  (with options: `package')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2023 by BenSt099
+%% 
+%% This file may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.3 of this license
+%% or (at your option) any later version. The latest version of this
+%% license is in:
+%% 
+%%    http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3 or later is part of all distributions of LaTeX version
+%% 2005/12/01 or later.
+%% 
+\NeedsTeXFormat{LaTeX2e}[2005/12/01]
+\ProvidesPackage{isosafety}
+    [2023/11/09 v1.1 ISO Safety Colors And Safety Signs]
+
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{ifthen}
+\RequirePackage{xkeyval}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{Warning}{HTML}{F9A800}
+\definecolor{Prohibition}{HTML}{9B2423}
+\definecolor{Mandatory}{HTML}{005387}
+\definecolor{Rescue}{HTML}{237F52}
+\definecolor{Backgrounds}{HTML}{ECECE7}
+\definecolor{Symbol}{HTML}{2B2B2C}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\isosafetypath}{false}
+\DeclareOptionX{fullpath}{\renewcommand{\isosafetypath}{#1}}
+\ProcessOptionsX\relax
+
+\ifthenelse{\equal{\isosafetypath}{false}}
+{\PackageError{isosafety}{Missing key-value option 'fullpath' in usepackage-statement, please see documentation}{Please provide the full path to this package, usually /texlive/2024/texmf-dist/tex/latex/isosafety}}
+{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Isosign}[1]{\isosafetypath /isosafety-pdfs/ISO_7010_#1.pdf}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput
+%%
+%% End of file `isosafety.sty'.

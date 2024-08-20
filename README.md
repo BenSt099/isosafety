@@ -5,9 +5,17 @@
 ![Static Badge](https://img.shields.io/badge/Size-%3C2%20MB-red)
 ![Static Badge](https://img.shields.io/badge/Maintained-Yes-success)
 
+## Documentation
+
+The documentation can be viewed [here](https://github.com/BenSt099/isosafety/).
+
+## Known Issues
+
+Please update to version v1.2 or make sure that this version is installed on your system. Version v1.1 contains a bug.
+
 ## Issues
 
-For creating an issue, please provide a detailed description [here](https://github.com/BenSt099/isosafety/issues/new?assignees=&labels=&projects=&template=general-issues.md&title=).
+In case of an issue, please provide a detailed description [here](https://github.com/BenSt099/isosafety/issues).
 
 ## License
 
