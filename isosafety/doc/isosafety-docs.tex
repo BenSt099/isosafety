@@ -1,0 +1,138 @@
+\documentclass{article}
+
+\usepackage{xcolor}
+\definecolor{Caution}{HTML}{F9A800}
+\definecolor{Warning}{HTML}{D05D29} 
+\definecolor{Prohibition}{HTML}{9B2423}  
+\definecolor{Mandatory}{HTML}{005387}  
+\definecolor{Rescue}{HTML}{237F52}  
+\definecolor{Backgrounds}{HTML}{ECECE7}  
+\definecolor{Symbol}{HTML}{2B2B2C} 
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\makeatletter
+\newcommand{\verbatimfontfamily}[1]{\def\verbatim@font{#1}}%
+\makeatother
+\usepackage{colortbl}
+\usepackage{geometry}
+\geometry{
+    left=2cm,
+    right=2cm,
+    top=3cm,
+    bottom=3cm
+}
+
+\begin{document}
+
+\begin{center}
+    {\Huge isosafety} \vspace{5mm}
+
+    {\Large Version 1.2}\vspace{5mm}
+
+    {\Large August 20, 2024}\vspace{5mm}
+
+    \href{https://github.com/BenSt099/isosafety}{github.com/BenSt099/isosafety} 
+\end{center}\vspace{5mm}
+
+\section{General information}
+
+This is the official documentation of the package \textbf{isosafety}. It provides ISO colors and signs according to the ISO standards
+3864 and 7010. It can be used to create instructions for chemical or physical experiments.\vspace{5mm}
+
+\noindent{\large \textbf{NOTE}}
+
+\noindent This is not an official package from the ISO. All signs are taken from Wikipedia.
+
+\section{Dependencies}
+
+This package has the following dependencies: \texttt{graphicx}, \texttt{xcolor}, \texttt{ifthen}, \texttt{xkeyval}
+
+\section{ISO Colors}
+
+Seven colors are defined which are also used to create the signs: \vspace{5mm}
+
+\renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{ll}
+        \hline
+        Name & Colors \\ 
+        \hline
+        Caution & \cellcolor{Caution} \\
+        Warning & \cellcolor{Warning} \\
+        Prohibition & \cellcolor{Prohibition} \\
+        Mandatory & \cellcolor{Mandatory} \\
+        Rescue & \cellcolor{Rescue} \\
+        Backgrounds & \cellcolor{Backgrounds} \\
+        Smybol & \cellcolor{Symbol} \\
+        \hline
+\end{tabular}\vspace{5mm}
+
+\noindent How to use: \vspace{3mm}
+
+\verbatimfontfamily{\slshape\ttfamily}
+
+\begin{verbatim}
+{\color{Mandatory} \textbf{Text with Mandatory color.}}
+\end{verbatim}\vspace{2mm}
+
+\noindent{\color{Mandatory} \textbf{Text with Mandatory color.}}
+
+\newpage
+
+\section{ISO Signs}
+
+\noindent This section deals with the construction of signs. To begin with, each sign is placed in a category, has a letter and a number: \vspace{5mm}
+
+\renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{lll}
+        \hline
+        Category & Letter(s) & Numbers \\ 
+        \hline
+        Safe condition &  E & (001 - 070) \\
+        Crescent variant & CV & (003, 004, 009, 010, 011, 012, 013, 027, 028, 029, 064, 067) \\
+        Fire Protection &  F & (001 - 019) \\
+        Mandatory &  M & (001 - 060) \\
+        Prohibition &  P & (001 - 074) \\
+        Warning & W & (001 - 080) \\
+        \hline
+\end{tabular}\vspace{5mm}
+
+\noindent The command to access a sign is: \begin{verbatim}
+    \Isosign{<Letter><Number>}
+\end{verbatim}\vspace{5mm}
+
+\noindent This command constructs a path to a sign in your \TeX Live / Mik\TeX / \ldots $\;$ installation. That means to actually display the sign, resize it, edit it, etc., follow the given example:
+
+\begin{verbatim}
+    %%% Example file   
+    \documentclass{article}
+        
+                            % example path
+    \usepackage[ fullpath = /texlive/2024/texmf-dist/tex/latex/isosafety ]{isosafety}
+
+    \usepackage{graphicx}
+
+    \begin{document}
+
+        \includegraphics{\Isosign{F001}}
+        \includegraphics[scale=2]{\Isosign{P074}}
+
+    \end{document}
+\end{verbatim}\vspace{5mm}
+
+\noindent As you can notice, when we import the package, we provide it with an option. The option is named \textbf{fullpath} and is \textbf{necessary}!
+Since you may have a different version of \TeX Live or maybe even a different \TeX-installation, you have to provide a path that leads to the installation directory 
+of isosafety. The path that is given in the example is the typical path on most systems. The year \textit{2024} refers to the version of \TeX Live installed on your system \vspace{5mm}
+
+\noindent\textbf{NOTE}: On Windows, the path should also be given with foreslashes (just like in the example). \\
+
+\noindent\textbf{NOTE}: The last directory in the path \textit{does not} end with a foreslash (just like in the example). \\
+
+\noindent\textbf{NOTE}: For a complete overview of the available signs, take a look at \href{https://en.wikipedia.org/wiki/ISO_7010}{Wikipedia}.
+
+
+
+
+
+
+\end{document}

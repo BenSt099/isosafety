@@ -22,21 +22,12 @@
 %<package>\NeedsTeXFormat{LaTeX2e}[2005/12/01]
 %<package>\ProvidesPackage{isosafety}
 %<*package>
-    [2024/08/20 v1.2 ISO Safety Colors And Safety Signs]
-
-\RequirePackage{graphicx}
-\RequirePackage{xcolor}
-\RequirePackage{ifthen}
-\RequirePackage{xkeyval}
-
-\newcommand{\fullpath}{}
-\DeclareOption{fullpath}{\def\isosafetypath{#1}}
-\ProcessOptions\relax
+[2024/08/20 v1.2 ISO Safety Colors And Safety Signs]
 %</package>
-%
 %<*driver>
 \documentclass{ltxdoc}
 \usepackage{hyperref}
+\usepackage{xcolor}
 \definecolor{Warning}{HTML}{F9A800}  
 \definecolor{Prohibition}{HTML}{9B2423}  
 \definecolor{Mandatory}{HTML}{005387}  
@@ -139,6 +130,11 @@
 % \StopEventually{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{ifthen}
+\RequirePackage{xkeyval}
 
 \definecolor{Warning}{HTML}{F9A800}  
 \definecolor{Prohibition}{HTML}{9B2423}  
