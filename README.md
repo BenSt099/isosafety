@@ -1,6 +1,6 @@
 # isosafety
 
-[![Static Badge](https://img.shields.io/badge/Version-v1.2-blue)](https://github.com/BenSt099/isosafety/releases/tag/v1.2)
+[![Static Badge](https://img.shields.io/badge/Version-v1.3-blue)](https://github.com/BenSt099/isosafety/releases/tag/v1.3)
 [![Static Badge](https://img.shields.io/badge/Package-CTAN-blue)](https://www.ctan.org/pkg/isosafety)
 ![Static Badge](https://img.shields.io/badge/Size-%3C2%20MB-red)
 ![Static Badge](https://img.shields.io/badge/Maintained-Yes-success)
@@ -11,7 +11,8 @@ The documentation can be viewed [here](https://github.com/BenSt099/isosafety/blo
 
 ## Known Issues
 
-Please update to version v1.2 or make sure that this version is installed on your system. Version v1.1 contains a bug.
+Please make sure you have the latest version of this package installed on your system (currently __v1.3__) since
+both v1.1 and v1.2 contain bugs.
 
 ## Issues
 
