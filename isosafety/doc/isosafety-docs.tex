@@ -22,15 +22,16 @@
     top=3cm,
     bottom=3cm
 }
+\usepackage{tcolorbox}
 
 \begin{document}
 
 \begin{center}
     {\Huge isosafety} \vspace{5mm}
 
-    {\Large Version 1.3}\vspace{5mm}
+    {\Large Version 1.4}\vspace{5mm}
 
-    {\Large August 28, 2024}\vspace{5mm}
+    {\Large August 31, 2024}\vspace{5mm}
 
     \href{https://github.com/BenSt099/isosafety}{github.com/BenSt099/isosafety} 
 \end{center}\vspace{5mm}
@@ -53,9 +54,9 @@ This package has the following dependencies: \texttt{graphicx}, \texttt{xcolor},
 Seven colors are defined which are also used to create the signs: \vspace{5mm}
 
 \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{ll}
+    \begin{tabular}{|l|l|}
         \hline
-        Name & Colors \\ 
+        \textbf{Name} & \textbf{Colors} \\ 
         \hline
         Caution & \cellcolor{Caution} \\
         Warning & \cellcolor{Warning} \\
@@ -69,7 +70,7 @@ Seven colors are defined which are also used to create the signs: \vspace{5mm}
 
 \noindent How to use: \vspace{3mm}
 
-\verbatimfontfamily{\slshape\ttfamily}
+\verbatimfontfamily{\ttfamily}
 
 \begin{verbatim}
 {\color{Mandatory} \textbf{Text with Mandatory color.}}
@@ -88,7 +89,7 @@ Seven colors are defined which are also used to create the signs: \vspace{5mm}
         \hline
         Category & Letter(s) & Numbers \\ 
         \hline
-        Safe condition &  E & (001 - 070) \\
+        Safe condition &  E & (001 - 004, 007 - 070) \\
         Crescent variant & CV & (003, 004, 009, 010, 011, 012, 013, 027, 028, 029, 064, 067) \\
         Fire Protection &  F & (001 - 019) \\
         Mandatory &  M & (001 - 060) \\
@@ -97,42 +98,80 @@ Seven colors are defined which are also used to create the signs: \vspace{5mm}
         \hline
 \end{tabular}\vspace{5mm}
 
-\noindent The command to access a sign is: \begin{verbatim}
+\noindent The command to access a sign is: 
+
+\begin{tcolorbox}
+    \vspace{3mm}
+    \begin{verbatim}
     \Isosign{<Letter><Number>}
-\end{verbatim}\vspace{5mm}
+    \end{verbatim}    
+\end{tcolorbox}
+\vspace{5mm}
 
-\noindent This command constructs a path to a sign in your \TeX Live / Mik\TeX / \ldots $\;$ installation. That means to actually display the sign, resize it, edit it, etc., follow the given example:
+\noindent This command constructs a path to a sign in your \TeX Live / Mik\TeX / \ldots $\;$ installation. 
+To display a sign, use the following code:
 
-\begin{verbatim}
+\begin{tcolorbox}
+    \vspace{3mm}
+    \begin{verbatim}
     %%% Example file   
     \documentclass{article}
-        
-                            % example path
-    \usepackage[ fullpath = /texlive/2024/texmf-dist/tex/latex/isosafety ]{isosafety}
+    
+        \usepackage{isosafety}
 
-    \usepackage{graphicx}
+        \usepackage{graphicx}
 
     \begin{document}
 
-        \includegraphics{\Isosign{F001}}
-        \includegraphics[scale=2]{\Isosign{P074}}
+            \includegraphics{\Isosign{F001}}
+
+            \includegraphics[scale=2]{\Isosign{P074}}
 
     \end{document}
-\end{verbatim}\vspace{5mm}
+    \end{verbatim}    
+\end{tcolorbox}
+\vspace{5mm}
 
-\noindent As you can notice, when we import the package, we provide it with an option. The option is named \textbf{fullpath} and is \textbf{necessary}!
-Since you may have a different version of \TeX Live or maybe even a different \TeX-installation, you have to provide a path that leads to the installation directory 
-of isosafety. The path that is given in the example is the typical path on most systems. The year \textit{2024} refers to the version of \TeX Live installed on your system \vspace{5mm}
+\section{Known Issue}
+
+\noindent On some systems, \TeX \hspace{1mm} is not able to find the pdfs properly. Since this is an issue that seems to exist only on certain systems and not all, please use the following
+workaround by providing the fullpath that leads to the installation directory 
+of isosafety. This can be done by supplying it through the \textbf{fullpath}-option:
+
+\begin{tcolorbox}
+    \vspace{3mm}
+    \begin{verbatim}
+    %%% Example file   
+    \documentclass{article}
+    
+                                % example path
+        \usepackage[ fullpath = /texlive/2024/texmf-dist/tex/latex/isosafety ]{isosafety}
+
+        \usepackage{graphicx}
+
+    \begin{document}
+
+            \includegraphics{\Isosign{F001}}
+
+            \includegraphics[scale=2]{\Isosign{P074}}
+
+    \end{document}
+    \end{verbatim}    
+\end{tcolorbox}
+\vspace{5mm}
+
+\noindent If you are unsure about the path, simply execute 
+\begin{verbatim}
+    kpsewhich isosafety.sty
+\end{verbatim}\vspace{3mm} 
+
+\noindent in a terminal and a path will be returned. The path that is given in the example is the typical path on most systems. 
+\vspace{5mm}
 
 \noindent\textbf{NOTE}: On Windows, the path should also be given with foreslashes (just like in the example). \\
 
 \noindent\textbf{NOTE}: The last directory in the path \textit{does not} end with a foreslash (just like in the example). \\
 
 \noindent\textbf{NOTE}: For a complete overview of the available signs, take a look at \href{https://en.wikipedia.org/wiki/ISO_7010}{Wikipedia}.
-
-
-
-
-
 
 \end{document}

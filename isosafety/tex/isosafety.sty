@@ -12,7 +12,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
 \ProvidesPackage{isosafety}
-[2024/08/29 v1.3 ISO Safety Colors And Safety Signs]
+[2024/08/31 v1.4 ISO Safety Colors And Safety Signs]
 
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
@@ -35,13 +35,11 @@
 \DeclareOptionX{fullpath}{\renewcommand{\isosafetypath}{#1}}
 \ProcessOptionsX\relax
 
-\ifthenelse{\equal{\isosafetypath}{false}}
-{\PackageError{isosafety}{Missing key-value option 'fullpath' in usepackage-statement, please see documentation.}{Please provide the full path to this package, usually /texlive/2024/texmf-dist/tex/latex/isosafety}}
-{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\Isosign}[1]{\isosafetypath /isosafety-pdfs/ISO_7010_#1.pdf}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifthenelse{\equal{\isosafetypath}{false}}
+{\newcommand{\Isosign}[1]{/isosafety-pdfs/ISO_7010_#1.pdf}}
+{\newcommand{\Isosign}[1]{\isosafetypath /isosafety-pdfs/ISO_7010_#1.pdf}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \endinput
