@@ -16,6 +16,7 @@ Please make sure you have the latest version of this package installed on your s
 If Latex tells you that it does not find any pdf-files, please provide a full path to the package on your system via the `fullpath`-option:
 
 ```
+                        % example path
 \usepackage[ fullpath = /texlive/2024/texmf-dist/tex/latex/isosafety ]{isosafety}
 
 \usepackage{graphicx}
